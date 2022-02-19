@@ -15,7 +15,7 @@ export class Routes {
   public routes(): Router {
     this.router.get("/", (req: Request, res: Response) => {
       spotifyApi
-        .getNewReleases({ limit: 20 })
+        .getNewReleases({ limit: 5, country: "GB", offset: 0 })
         .then((data) => {
           res.json(data);
         })
@@ -24,7 +24,7 @@ export class Routes {
         });
     });
 
-    this.router.get("/search", searchRequest, this.searchController.search);
+    this.router.get("/search", searchRequest(), this.searchController.search);
 
     return this.router;
   }

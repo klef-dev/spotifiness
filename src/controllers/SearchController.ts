@@ -11,7 +11,7 @@ export class SearchController {
     }
     const { query } = req.query as any;
     try {
-      const data = await spotifyApi.search(query, ["artist", "track"]);
+      const data = await spotifyApi.search(query, ["artist", "track", "album"]);
       return res.status(data.statusCode).json(data.body);
     } catch (error) {
       return res.status(400).json({ error });
