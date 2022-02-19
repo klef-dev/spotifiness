@@ -23,34 +23,20 @@ body {
   font-weight: 700;
 }
 
-.header {
-  position: fixed;
-  top: 0;
-  left: 230px; /* sidebar width */
-  right: 0;
-  height: 80px;
-  background-color: rgb(18, 18, 18);
-  padding-left: 24px;
-  padding-right: 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 main {
   padding: 80px 32px 32px 262px;
   min-height: 100vh;
   background: dodgerblue;
 }
 
-::-webkit-scrollbar {
+main::-webkit-scrollbar {
   width: 16px;
 }
 
-::-webkit-scrollbar-thumb {
+main::-webkit-scrollbar-thumb {
   background-color: #909090;
 }
 
-::-webkit-scrollbar-track {
+main::-webkit-scrollbar-track {
   background-color: rgb(18, 18, 18);
 }

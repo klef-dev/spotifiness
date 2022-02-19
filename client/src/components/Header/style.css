@@ -1,0 +1,43 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 230px; /* sidebar width */
+  right: 0;
+  height: 60px;
+  padding-left: 24px;
+  padding-right: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+
+.header--bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  background-color: rgb(18, 18, 18);
+  z-index: 0;
+}
+
+.header--buttons {
+  position: relative;
+}
+
+.header--button {
+  background: rgb(7, 7, 7);
+  color: #fff;
+  border: 0;
+  border-radius: 50%;
+  height: 34px;
+  width: 34px;
+  cursor: pointer;
+  outline: 0;
+}
+
+.header--button.previous {
+  margin-right: 10px;
+}
