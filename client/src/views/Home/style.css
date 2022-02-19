@@ -1,85 +1,98 @@
-.section {
-  margin-bottom: 35px;
+main .section .subtitle {
+  color: #b3b3b3;
+  font-size: 1rem;
+  margin-top: -8px;
+  font-weight: 100;
 }
 
-.title {
-  font-size: 1.75rem;
-  margin-top: 0;
-}
-
-.section--body {
+.section--header {
   display: flex;
-  flex-wrap: wrap;
-  margin-right: -16px;
-  margin-bottom: -16px;
+  justify-content: space-between;
 }
 
 .section--body--item {
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  border-radius: 10px;
-  margin-right: 16px;
-  margin-bottom: 16px;
+  width: 165px;
+  height: 240px;
+  background-color: rgb(38, 38, 38);
 }
 
-.category--item {
-  width: 180px;
-  height: 180px;
-  background-color: rgb(245, 155, 35);
+.section--body--item.album--item,
+.section--body--item.artist--item {
+  padding: 20px;
+  cursor: pointer;
 }
 
-.category--item:before {
-  content: " ";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.3) 0%,
-    rgba(0, 212, 255, 0) 100%
-  );
-  z-index: -1;
+.section--body--item .section--body--item--img {
+  width: 125px;
+  height: 125px;
+  margin: 0 auto;
 }
 
-.category--item a {
-  display: block;
-  height: 100%;
-  width: 100%;
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
+.section--body--item .section--body--item--img img {
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 10px 30px 0 rgba(0,0,0,.3), 0 1px 2px 0 rgba(0,0,0,.2);
 }
 
-.category--item a h3 {
+.section--body--item--title {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+
+.section--body--item--subtitle {
   margin: 0;
-  padding-top: 16px;
-  padding-left: 16px;
+  margin-top: 1px;
 }
 
-.category--item img {
+a.section--header--right--more,
+.section--body--item--subtitle,
+.section--body--item--subtitle a {
+  color: #b3b3b3;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+a.section--header--right--more:hover,
+.section--body--item--subtitle a:hover {
+  border-bottom: 1px solid #b3b3b3;
+}
+
+a.section--header--right--more {
+  font-weight: 700;
+  letter-spacing: 1.35px;
+}
+
+/* Add artist circle image */
+.section--body--item.artist--item .section--body--item--img img {
+  border-radius: 50%;
+}
+
+.section--body--item--play {
+  display: none;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: #1db954;
+  align-items: center;
+  justify-content: center;
   position: absolute;
-  width: 100px;
-  height: 100px;
-  bottom: -5px;
-  right: -18px;
-  transform: rotate(25deg);
-  z-index: 0;
-  box-shadow: -1px 3px 2px 0px rgba(0, 0, 0, 0.1);
+  bottom: 15px;
+  right: 15px;
+  box-shadow: 0px 0px 8px 8px rgb(37, 37, 37);
+  cursor: default;
 }
 
-.section--body--item.section--body--item--lg.category--item {
-  width: 376px; /* (2 * normal section--item width) + 16px [margin-right: 16px] */
-  height: 220px;
+.section--body--item--play:hover,
+.section--body--item--play.active {
+  transform: scale(1.05);
 }
 
-.section--body--item.section--body--item--lg.category--item img {
-  width: 130px;
-  height: 130px;
-}
-
-.section--body--item.section--body--item--lg.category--item a h3 {
-  font-size: 2.5rem;
+.section--body--item:hover .section--body--item--play,
+.section--body--item--play.active {
+  display: flex;
 }

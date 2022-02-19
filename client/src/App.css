@@ -26,7 +26,7 @@ body {
 main {
   padding: 80px 32px 32px 262px;
   min-height: 100vh;
-  background: dodgerblue;
+  background: rgb(26, 25, 25);
 }
 
 main::-webkit-scrollbar {
