@@ -3,6 +3,7 @@ import HomeIcon from "../../icons/Home";
 import SearchIcon from "../../icons/Search";
 import LibraryIcon from "../../icons/Library";
 import "./style.css";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   return (
@@ -18,22 +19,22 @@ export const Navbar = () => {
       </div>
       <div className="menu">
         <div className="menu--item">
-          <a href="/">
+          <Link to="/">
             <HomeIcon style={{ width: "24px", height: "24px" }} />{" "}
             <span className="menu--item--text">Home</span>
-          </a>
+          </Link>
         </div>
         <div className="menu--item">
-          <a href="/">
+          <Link to="/search">
             <SearchIcon style={{ width: "24px", height: "24px" }} />{" "}
             <span className="menu--item--text">Search</span>
-          </a>
+          </Link>
         </div>
         <div className="menu--item">
-          <a href="/">
+          <Link to="/library">
             <LibraryIcon style={{ width: "24px", height: "24px" }} />{" "}
             <span className="menu--item--text">Library</span>
-          </a>
+          </Link>
         </div>
       </div>
     </nav>

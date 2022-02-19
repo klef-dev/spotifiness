@@ -1,16 +1,22 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import { Header } from "./components/Header";
 import { Navbar } from "./components/Navbar";
+import { Home } from "./views/Home";
+import { Search } from "./views/Search";
 
 function App() {
   return (
-    <div className="App">
+    <Router>
       <Navbar />
       <Header />
       <main>
-        <div style={{ minHeight: "200vh" }}></div>
+        <Routes>
+          <Route path="/" exact element={<Home />} />
+          <Route path="/search" exact element={<Search />} />
+        </Routes>
       </main>
-    </div>
+    </Router>
   );
 }
 

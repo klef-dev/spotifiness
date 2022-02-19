@@ -13,7 +13,7 @@ export const Search = () => {
         id="search"
         name="search"
         className="input"
-        placeholder="Search"
+        placeholder="Artist, songs or albums"
       />
     </div>
   );
