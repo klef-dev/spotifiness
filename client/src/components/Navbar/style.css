@@ -1,0 +1,55 @@
+.sidebar {
+  background-color: rgba(4, 4, 4);
+  padding: 24px 24px 0 24px;
+  position: fixed;
+  height: 100%;
+  width: 230px;
+}
+
+.sidebar .brand {
+  padding-bottom: 18px;
+}
+
+.sidebar .brand svg {
+  width: 131px;
+}
+
+.sidebar .menu .menu--item {
+  font-size: 1.5rem;
+  position: relative; /* Needed for the .active state to add the background */
+}
+
+.sidebar .menu .menu--item a,
+.sidebar .sidebar--download-app a {
+  text-decoration: none;
+  color: #b3b3b3;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  transition: all 350ms;
+}
+
+.sidebar .menu .menu--item.active a,
+.sidebar .menu .menu--item:hover a {
+  color: #fff;
+}
+/* Active state of the menu  item, adds a background color to the element */
+.sidebar .menu .menu--item.active:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: 8px;
+  left: -16px; /* -(Sidebar's padding left) + 8px */
+  right: -16px; /* -(Sidebar's padding left) + 8px */
+  background: rgb(40, 40, 40);
+  z-index: -1;
+  border-radius: 5px;
+}
+
+.menu--item--text {
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-left: 15px;
+}
