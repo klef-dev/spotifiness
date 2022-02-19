@@ -1,5 +1,8 @@
 import React from "react";
-import "./style.css"
+import HomeIcon from "../../icons/Home";
+import SearchIcon from "../../icons/Search";
+import LibraryIcon from "../../icons/Library";
+import "./style.css";
 
 export const Navbar = () => {
   return (
@@ -16,19 +19,19 @@ export const Navbar = () => {
       <div className="menu">
         <div className="menu--item">
           <a href="/">
-            <i className="lni-home"></i>{" "}
+            <HomeIcon style={{ width: "24px", height: "24px" }} />{" "}
             <span className="menu--item--text">Home</span>
           </a>
         </div>
         <div className="menu--item">
           <a href="/">
-            <i className="lni-search"></i>{" "}
+            <SearchIcon style={{ width: "24px", height: "24px" }} />{" "}
             <span className="menu--item--text">Search</span>
           </a>
         </div>
         <div className="menu--item">
           <a href="/">
-            <i className="lni-library"></i>{" "}
+            <LibraryIcon style={{ width: "24px", height: "24px" }} />{" "}
             <span className="menu--item--text">Library</span>
           </a>
         </div>

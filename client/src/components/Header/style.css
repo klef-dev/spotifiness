@@ -41,3 +41,43 @@
 .header--button.previous {
   margin-right: 10px;
 }
+
+.header--actions {
+  display: flex;
+  align-items: center;
+}
+
+.header--search {
+  margin-left: 25px;
+  min-width: 360px;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group .left-icon {
+  position: absolute;
+  z-index: 2;
+  left: 10px;
+  top: 8px;
+  color: #333;
+  font-size: 1.375rem;
+  height: 40px;
+  line-height: 40px;
+}
+
+.input {
+  margin: 0;
+  border: 0;
+  position: relative;
+  z-index: 1;
+  height: 40px;
+  border-radius: 25px;
+  width: 100%;
+  outline: 0;
+}
+
+.input-group.has-left-icon .input {
+  padding-left: 50px;
+}

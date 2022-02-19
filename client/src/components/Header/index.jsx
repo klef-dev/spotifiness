@@ -1,5 +1,8 @@
 import React from "react";
-import "./style.css"
+import LeftArrowIcon from "../../icons/LeftArrow";
+import RightArrowIcon from "../../icons/RightArrow";
+import { Search } from "../Search";
+import "./style.css";
 
 export const Header = () => {
   return (
@@ -7,12 +10,13 @@ export const Header = () => {
       <div className="header--bg"></div>
       <div className="header--buttons">
         <button className="header--button previous">
-          <i className="lni-chevron-left"></i>
+          <LeftArrowIcon style={{ width: "24px", height: "24px" }} />
         </button>
         <button className="header--button next">
-          <i className="lni-chevron-right"></i>
+          <RightArrowIcon style={{ width: "24px", height: "24px" }} />
         </button>
       </div>
+      <Search />
     </div>
   );
 };
