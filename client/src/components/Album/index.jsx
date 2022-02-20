@@ -7,6 +7,7 @@ export const Album = ({ item }) => {
       className={`section--body--item ${
         item.album_type === "album" ? "album--item" : "artist--item"
       }`}
+      onClick={() => window.open(item.external_urls.spotify, "_blank")}
     >
       <p
         className="section--body--item--subtitle"
@@ -22,9 +23,11 @@ export const Album = ({ item }) => {
         {item.artists.map((artist, i) => (
           <a
             key={artist.id}
-            href={artist.external_urls.spotify}
-            target="_blank"
-            rel="noreferrer"
+            onClick={(e) => {
+              e.preventDefault();
+              window.open(artist.external_urls.spotify, "_blank");
+            }}
+            href="/"
             style={{ color: "#fff" }}
           >
             {artist.name}
@@ -32,7 +35,14 @@ export const Album = ({ item }) => {
           </a>
         ))}
       </p>
-      <p className="section--body--item--subtitle">{item.release_date}</p>
+      <p className="section--body--item--subtitle">
+        {item.release_date}{" "}
+        {item.album_type !== "single" && (
+          <>
+            <b>.</b> {item.total_tracks} songs
+          </>
+        )}
+      </p>
       <div className="section--body--item--play">
         <PlayIcon style={{ width: "24px", height: "24px" }} />
       </div>

@@ -4,6 +4,7 @@ import helmet from "helmet";
 import cors from "cors";
 import mongoose from "mongoose";
 import express, { Request, Response } from "express";
+import apicache from "apicache";
 
 import { Routes } from "./src/routes/api";
 
@@ -28,6 +29,9 @@ class App {
     this.app.use(morgan("dev"));
     this.app.use(helmet());
     this.app.use(cors());
+    const cache = apicache.middleware;
+
+    this.app.use(cache("5 minutes"));
 
     this.app.use("/api/v1", this.routePrv.routes());
 

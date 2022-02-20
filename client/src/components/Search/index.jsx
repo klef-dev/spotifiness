@@ -1,19 +1,25 @@
-import { useStoreActions } from "easy-peasy";
 import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import SearchIcon from "../../icons/Search";
 
+function useQuery() {
+  const { search } = useLocation();
+
+  return React.useMemo(() => new URLSearchParams(search), [search]);
+}
+
 export const Search = () => {
-  const [query, setQuery] = useState("");
-  const search = useStoreActions((actions) => actions.search);
+  const query = useQuery();
+  const [q, setQuery] = useState(query.get("query") || "");
+  const navigate = useNavigate();
 
   const handleChange = async (e) => {
     setQuery(e.target.value);
-    if (e.target.value.length >= 3)
-      try {
-        await search({ query: e.target.value });
-      } catch (error) {
-        console.log(error);
-      }
+    query.delete("query");
+    if (e.target.value) {
+      query.append("query", e.target.value);
+    }
+    navigate(`/?${query.toString()}`);
   };
   return (
     <div className="header--search input-group has-left-icon has-right-icon can-delete">
@@ -27,7 +33,7 @@ export const Search = () => {
         name="search"
         className="input"
         placeholder="Artist, songs or albums"
-        value={query}
+        value={q}
         onChange={handleChange}
       />
     </div>
