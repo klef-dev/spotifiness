@@ -1,1 +1,1 @@
-export { SearchController } from "./SearchController";
+export { SpotifyController } from "./SpotifyController";

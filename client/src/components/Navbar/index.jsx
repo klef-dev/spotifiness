@@ -31,7 +31,7 @@ export const Navbar = () => {
           </Link>
         </div>
         <div className="menu--item">
-          <Link to="/library">
+          <Link to="/">
             <LibraryIcon style={{ width: "24px", height: "24px" }} />{" "}
             <span className="menu--item--text">Library</span>
           </Link>
