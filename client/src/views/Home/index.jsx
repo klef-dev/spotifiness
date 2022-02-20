@@ -42,15 +42,7 @@ export const Home = () => {
 
   const handleLoadMore = async (e) => {
     e.preventDefault();
-    if (q) {
-      try {
-        await search({ query: q, offset: offset + limit });
-      } catch (error) {
-        console.log(error);
-      }
-    } else {
-      setOffset(offset + limit);
-    }
+    setOffset(offset + limit);
   };
   return (
     <div>
