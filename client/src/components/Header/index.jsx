@@ -9,10 +9,16 @@ export const Header = () => {
     <div className="header">
       <div className="header--bg"></div>
       <div className="header--buttons">
-        <button className="header--button previous">
+        <button
+          className="header--button previous"
+          onClick={() => window.history.back()}
+        >
           <LeftArrowIcon style={{ width: "24px", height: "24px" }} />
         </button>
-        <button className="header--button next">
+        <button
+          className="header--button next"
+          onClick={() => window.history.forward()}
+        >
           <RightArrowIcon style={{ width: "24px", height: "24px" }} />
         </button>
       </div>
