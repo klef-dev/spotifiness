@@ -5,6 +5,8 @@ import cors from "cors";
 import mongoose from "mongoose";
 import express, { Request, Response } from "express";
 import apicache from "apicache";
+import swaggerUI from "swagger-ui-express";
+import docs from "./src/docs";
 
 import { Routes } from "./src/routes/api";
 
@@ -33,12 +35,13 @@ class App {
 
     this.app.use(cache("5 minutes"));
 
-    this.app.use("/api/v1", this.routePrv.routes());
-
     const PORT = process.env.PORT || 3333;
 
-    this.app.get("*", (req: Request, res: Response) => {
-      res.redirect("/api/v1");
+    this.app.use("/api/v1", this.routePrv.routes());
+    this.app.use("/docs", swaggerUI.serve, swaggerUI.setup(docs));
+
+    this.app.use("/", (req, res) => {
+      res.redirect(301, "/docs");
     });
 
     this.app.listen(PORT, () => {
