@@ -1,6 +1,6 @@
 import { Router, Request, Response } from "express";
 import geoip from "geoip-lite";
-import { spotifyApi } from "../../helpers";
+import { spotifyApi } from "../helpers";
 
 // Controller
 import { SearchController } from "../controllers";

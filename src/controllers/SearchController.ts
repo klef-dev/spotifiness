@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { validationResult } from "express-validator";
-import { spotifyApi } from "../../helpers";
+import { spotifyApi } from "../helpers";
 export class SearchController {
   public search = async (req: Request, res: Response) => {
     const errors = validationResult(req);

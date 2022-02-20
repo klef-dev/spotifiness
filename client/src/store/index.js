@@ -13,6 +13,14 @@ export default createStore(
       actions.setNewReleases(data);
       return data;
     }),
+    search: thunk(async (actions, payload, { getState }) => {
+      const { api_uri } = getState();
+      const { data } = await axios.get(
+        `${api_uri}/search?query=${payload.query}`
+      );
+      actions.setNewReleases(data);
+      return data;
+    }),
     setNewReleases: action((state, payload) => {
       state.newReleases = payload;
     }),
